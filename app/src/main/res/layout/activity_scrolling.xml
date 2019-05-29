@@ -20,7 +20,7 @@
         <RelativeLayout
             android:id="@+id/rlHeader"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="@dimen/collapsed_header_height">
 
             <LinearLayout
                 android:layout_width="wrap_content"

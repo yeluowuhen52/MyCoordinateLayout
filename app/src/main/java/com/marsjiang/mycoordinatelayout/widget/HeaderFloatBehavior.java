@@ -68,7 +68,7 @@ public class HeaderFloatBehavior extends CoordinatorLayout.Behavior<View> {
         // Translation
         final float collapsedOffset = resources.getDimension(R.dimen.collapsed_float_offset_y);
         final float initOffset = resources.getDimension(R.dimen.init_float_offset_y);
-        final float translateY = collapsedOffset + (initOffset - collapsedOffset) * transProgress;
+        final float translateY = 2*collapsedOffset + (initOffset - collapsedOffset*2) * transProgress;
 
         final float dependencyHeight = dependency.getTranslationY();
 
