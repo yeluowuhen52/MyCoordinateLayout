@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyCoordinateLayout</string>
+
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+
+    <string name="header_scrolling_behavior">com.marsjiang.mycoordinatelayout.widget.HeaderScrollingBehavior</string>
+    <string name="header_float_behavior">com.marsjiang.mycoordinatelayout.widget.HeaderFloatBehavior</string>
+
+</resources>
