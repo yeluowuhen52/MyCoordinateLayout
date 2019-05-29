@@ -7,6 +7,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.Scroller;
 
@@ -40,6 +41,7 @@ public class HeaderScrollingBehavior extends CoordinatorLayout.Behavior<Recycler
     public boolean layoutDependsOn(CoordinatorLayout parent, RecyclerView child, View dependency) {
         if (dependency != null && dependency.getId() == R.id.scrolling_header) {
             dependentView = new WeakReference<>(dependency);
+
             return true;
         }
         return false;
@@ -49,6 +51,8 @@ public class HeaderScrollingBehavior extends CoordinatorLayout.Behavior<Recycler
     public boolean onLayoutChild(CoordinatorLayout parent, RecyclerView child, int layoutDirection) {
         CoordinatorLayout.LayoutParams lp = (CoordinatorLayout.LayoutParams) child.getLayoutParams();
         if (lp.height == CoordinatorLayout.LayoutParams.MATCH_PARENT) {
+            Log.d("myHeight",getDependentViewCollapsedHeight()+"");
+            Log.d("myParentHeight",parent.getHeight()+"");
             child.layout(0, 0, parent.getWidth(), (int) (parent.getHeight() - getDependentViewCollapsedHeight()));
             return true;
         }
