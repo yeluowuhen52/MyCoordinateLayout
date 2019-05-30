@@ -62,6 +62,8 @@ public class HeaderScrollingBehavior extends CoordinatorLayout.Behavior<Recycler
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, RecyclerView child, View dependency) {
         Resources resources = getDependentView().getResources();
+        Log.d("TranslationY",dependency.getTranslationY()+"");
+        Log.d("TranslationHeight",dependency.getHeight()+"");
         final float progress = 1.f -
                 Math.abs(dependency.getTranslationY() / (dependency.getHeight() - resources.getDimension(R.dimen.collapsed_header_height)));
 
