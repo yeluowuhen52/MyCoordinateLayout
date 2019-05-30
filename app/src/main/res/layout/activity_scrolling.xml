@@ -1,72 +1,87 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:fitsSystemWindows="false"
+    tools:context="com.example.cyandev.androidplayground.ScrollingActivity">
 
-    <android.support.design.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <ImageView
+        android:id="@+id/scrolling_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff"
-        android:fitsSystemWindows="false"
-        tools:context="com.example.cyandev.androidplayground.ScrollingActivity">
+        android:layout_height="200dp"
+        android:background="@drawable/bg_header"
+        android:scaleType="centerCrop"/>
 
-
-        <ImageView
-            android:id="@+id/scrolling_header"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/bg_header"
-            android:scaleType="centerCrop"/>
-
-        <RelativeLayout
-            android:id="@+id/rlHeader"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/collapsed_header_height">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="扫码"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="取货"
-                    />
-            </LinearLayout>
-        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/collapsed_header_height">
 
         <LinearLayout
-            android:id="@+id/edit_search"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/init_search_height"
-            android:background="@color/colorInitFloatBackground"
-            app:layout_behavior="@string/header_float_behavior">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:text="搜索关键字"
-                android:textColor="#90000000"/>
+                android:text="扫码"
+                />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="取货"
+                />
         </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/edit_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/init_search_height"
+        android:background="@color/colorInitFloatBackground"
+        app:layout_behavior="@string/header_float_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="搜索关键字"
+            android:textColor="#90000000"/>
+
+    </LinearLayout>
 
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_behavior="@string/header_scrolling_behavior"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/collapsed_header_height"
+        android:background="@color/colorAccent"
+        app:layout_behavior="@string/bottom_float_behavior">
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#fff"
-            app:layoutManager="LinearLayoutManager"
-            app:layout_behavior="@string/header_scrolling_behavior"/>
+            android:gravity="center"
+            android:text="我是底栏"
+            />
+    </RelativeLayout>
 
-    </android.support.design.widget.CoordinatorLayout>
+</android.support.design.widget.CoordinatorLayout>

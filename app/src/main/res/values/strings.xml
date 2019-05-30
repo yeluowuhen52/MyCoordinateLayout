@@ -5,5 +5,6 @@
 
     <string name="header_scrolling_behavior">com.marsjiang.mycoordinatelayout.widget.HeaderScrollingBehavior</string>
     <string name="header_float_behavior">com.marsjiang.mycoordinatelayout.widget.HeaderFloatBehavior</string>
+    <string name="bottom_float_behavior">com.marsjiang.mycoordinatelayout.widget.BottomFloatBehavior</string>
 
 </resources>
